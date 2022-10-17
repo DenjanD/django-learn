@@ -18,9 +18,11 @@ from django.urls import path
 
 from hello.views import index
 from hello.views import index2
+from hello.views import templateChallengeIndex
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', index),
-    path('hello2/', index2)
+    path('hello2/', index2),
+    path('templatechallenge/', templateChallengeIndex)
 ]
