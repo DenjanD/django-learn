@@ -12,6 +12,16 @@
     <div class="container">
       {% include "hello/navbar.html" %}
       <div class="row">
+        <div class="col-md-12">
+          {% block content-1 %} {% for v in post %}
+          <div class="card">
+            <div class="card-title">{{v.title}}</div>
+            <div class="card-body">{{v.body}}</div>
+          </div>
+          {% endfor %} {% endblock content-1 %}
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-6">
           <h1>My name is</h1>
           <h2>This is my photo</h2>
