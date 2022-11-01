@@ -14,15 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 from hello.views import index
 from hello.views import index2
 from hello.views import templateChallengeIndex
+from hello.views import articles
 
+app_name = "hello"
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', index),
-    path('hello2/', index2),
-    path('templatechallenge/', templateChallengeIndex)
+    path('hello/', index, name='firsthello'),
+    path('hello2/', index2, name='secondhello'),
+    path('templatechallenge/', templateChallengeIndex, name="templatechallenge"),
+    re_path('^articles/(?P<year>[0-9]{4})/$', articles, name='dynamicarticles')
 ]
