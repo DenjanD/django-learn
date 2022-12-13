@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Forms</title>
+</head>
+<body>
+    <h1>Django Forms</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>{{ classform.as_table }}</table>
+        <!-- <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <br>
+        <label for="body">Body</label>
+        <textarea name="body" id="body" cols="30" rows="10"> -->
+
+        </textarea>
+        <br>
+        <!-- <label for="slug">Slug</label>
+        <input type="text" name="slug" id="slug"> -->
+        <button type="submit">Simpan</button>
+    </form>
+    
+    <!-- <h1>Forms Debug</h1>
+    <h6>Regular Form</h6>
+    <h5>{{ title }}</h5>
+    <h5>{{ body }}</h5>
+    <h6>Form Class</h6>
+    <h5>{{ titlec }}</h5>
+    <h5>{{ bodyc }}</h5> -->
+    <!-- <h5>{{ slug }}</h5> -->
+</body>
+</html>
