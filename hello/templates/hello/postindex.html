@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index dari Postingan</title>
+</head>
+<body>
+    <a href="{% url 'forms' %}" class="btn btn-success">Tambah</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Body</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Hapus</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for v in post %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{v.title}}</td>
+                <td>{{v.body}}</td>
+                <td>{{v.slug}}</td>
+                <td><a href="{% url 'delete' v.id %}" class="btn btn-danger">Hapus</a></td>
+                <td><a href="{% url 'update' v.id %}" class="btn btn-warning">Update</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

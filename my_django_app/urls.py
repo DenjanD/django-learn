@@ -21,6 +21,9 @@ from hello.views import index2
 from hello.views import templateChallengeIndex
 from hello.views import articles
 from hello.views import forms
+from hello.views import postindex
+from hello.views import update
+from hello.views import delete
 
 app_name = "hello"
 urlpatterns = [
@@ -30,4 +33,7 @@ urlpatterns = [
     path('templatechallenge/', templateChallengeIndex, name="templatechallenge"),
     re_path('^articles/(?P<year>[0-9]{4})/$', articles, name='dynamicarticles'),
     path('forms/', forms, name='forms'),
+    path('postindex/', postindex, name='postindex'),
+    re_path(r'^update/(?P<id>[0-9]+)/$', update, name='update'),
+    re_path(r'^delete/(?P<id>[0-9]+)/$', delete, name='delete'),
 ]
